@@ -12,19 +12,25 @@
     <header>
         <div class="container-fluid">
             <div class="row r1 align-items-center justify-content-between ">
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     <nav>
                         <a href="index.html"><i class="fas fa-play"></i> Играть</a>
-                        <a href=""><i class="fas fa-shopping-bag"></i> Магазин</a>
+                        <a href="shop.html"><i class="fas fa-shopping-bag"></i> Магазин</a>
                         <a href="vip.html"><i class="fas fa-crown"></i> VIP</a>
-                        <a href=""><i class="fas fa-newspaper"></i> Новости</a>
+                        <!-- <a href=""><i class="fas fa-newspaper"></i> Новости</a> -->
                     </nav>
                 </div>
                 <div class="col-xl-3">
                     <a href=" #"><img src="./assets/logo.png" id="logo" alt="logo"></a>
                 </div>
-                <div class="col-xl-push-2 ">
-                    <a id="auth" href=" #">ВОЙТИ ЧЕРЕЗ STEAM <i class="fab fa-steam"></i></a>
+                <div class="col-xl-push-2">
+                    <!-- <a id="auth" href=" #">ВОЙТИ ЧЕРЕЗ STEAM <i class="fab fa-steam"></i></a> -->
+                    <div id="profile">
+                    <i class="pric">69 <img src="./assets/coal-money.svg"></img></i>
+                    <a id="add" href=""><i class="fas fa-plus-square"></i></a>
+                    <img id="picu" src="./assets/logo.png" class="rounded" alt="Cinque Terre">
+                    <a id="logout" href=""><i class="fas fa-sign-out-alt"></i></a>
+                </div>
                 </div>
             </div>
         </div>
@@ -33,30 +39,27 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-3">
-
-                    <div class="gold">
-                      <img class="znak" src="./assets/gold-medal.svg" alt="bronze">
-                      <h3 class="zhl">GOLD</h3>
-                      <p class="opor">Возможности</p>
-                      <ul class="previleg">
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                        <li>Что-то там вам дадут</li>
-                      </ul>
-                      <p class="lngth lng2">*Оплатив данную привилегия она автоматически активируется на вашем аккаунте.</p>
-                    </div>
+                    <div class="silver sl">
+                        <img class="znak" src="./assets/silver-medal.svg" alt="bronze">
+                        <h3 class="zhl">SILVER</h3>
+                        <p class="opor">Возможности</p>
+                        <ul class="previleg">
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                          <li>Что-то там вам дадут</li>
+                        </ul>
+                        <p class="lngth lng2 ">*Оплатив данную привилегия она автоматически активируется на вашем аккаунте.</p>
+                      </div>
+              
                 </div> 
                 <div class="col-xl-3">   
                     <p class="selsr">ВЫБЕРИТЕ СРОК</p>  
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <div>
                         <label class="btn btn-secondary">
                             <input type="radio" name="options" id="option1" autocomplete="off" checked>
                             <i class="pric by">500 <img src="./assets/coal-money.svg"></img></i>
@@ -67,9 +70,11 @@
                             <i class="pric by">1000 <img src="./assets/coal-money.svg"></img></i>
                             <p class="durat"><i class="fas fa-calendar"></i >14 ДНЕЙ</p>
                         </label>
-                     
+                    </div>
+                    <div class="mn">
                         <label class="btn btn-secondary">
                             <input type="radio" name="options" id="option3" autocomplete="off">
+                            <i class="bz">2000</i>
                             <i class="pric by">1000 <img src="./assets/coal-money.svg"></img></i>
                             <p class="durat"><i class="fas fa-calendar"></i >30 ДНЕЙ</p>
                         </label>
@@ -78,9 +83,9 @@
                             <i class="pric by">1000 <img src="./assets/coal-money.svg"></img></i>
                             <p class="durat"><i class="fas fa-calendar"></i >60 ДНЕЙ</p>
                           </label>
-                   
+                        </div>
             </div>
-             <a id="GB" class="kup" href="javascript:void(0)">Купить</a>
+             <a id="GB" class="kup mn" href="javascript:void(0)">Купить</a>
         </div>
     </section>
     <footer>
@@ -98,12 +103,43 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div id="mdd" class="modal-content">
+                <button  type="button" class="close " data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+               <img src="./assets/logo.png" alt="logo"></img>
+               <p>Благодарим вас за покупку!</p>
+               <i>Товар</i>
+               <a>GOLD VIP</a>
+               <i>Количество</i>
+               <a>x1</a>
+               <i>Стоимость</i>
+               <a>69 <img id="coal2" src="./assets/coal-money.svg"></img></a>
+               <p>Чтобы получить товар зайдите на наш сервер и пропишитие команду /donat</p>
+              </div>
+            </div>
+          </div>  
+    </div>
     </footer>
     
     <link rel="stylesheet" href="./css_js/style.css">
     <link rel="stylesheet" href="./css_js/bootstrap.min.css">
     <script src="./css_js/jquery-3.5.1.min.js"></script>
     <script src="./css_js/bootstrap.min.js"></script>
+    <script>
+        $('#GB').on('click', function () {
+            $('#exampleModal').modal('show'); 
+        });
+        $('#SB').on('click', function () {
+            $('#exampleModal').modal('show'); 
+        });
+        $('#BB').on('click', function () {
+            $('#exampleModal').modal('show'); 
+        });
+   
+    </script>
 </body>
 
 </html>
