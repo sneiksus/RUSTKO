@@ -1,0 +1,132 @@
+ammo.shotgun;Дробь 12-го калибра;11.20;ammo.shotgun.png;Ammunition;30
+ammo.shotgun.fire;Зажигательный снаряд 12-го калибра;11.20;ammo.shotgun.fire.png;Ammunition;30
+ammo.shotgun.slug;Патрон 12-го калибра;11.20;ammo.shotgun.slug.png;Ammunition;30
+ammo.rifle;Патрон 5,56;11.20;ammo.rifle.png;Ammunition;150
+ammo.rifle.explosive;Разрывной патрон 5,56;11.20;ammo.rifle.explosive.png;Ammunition;150
+ammo.rifle.hv;Скоростной патрон 5,56;11.20;ammo.rifle.hv.png;Ammunition;150
+ammo.rifle.incendiary;Зажигательный патрон 5,56;11.20;ammo.rifle.incendiary.png;Ammunition;250
+ammo.handmade.shell;Самодельный патрон;11.20;ammo.handmade.shell.png;Ammunition;50
+ammo.pistol;Пистолетный патрон;11.20;ammo.pistol.png;Ammunition;100
+ammo.pistol.hv;Скоростной пистолетный патрон;11.20;ammo.pistol.hv.png;Ammunition;100
+ammo.pistol.fire;Зажигательный пистолетный патрон;11.20;ammo.pistol.fire.png;Ammunition;100
+ammo.nailgun.nails;Гвозди;11.20;ammo.nailgun.nails.png;Ammunition;50
+ammo.rocket.basic;Ракета;11.20;ammo.rocket.basic.png;Ammunition;5
+ammo.rocket.fire;Зажигательная ракета;11.20;ammo.rocket.fire.png;Ammunition;5
+ammo.rocket.hv;Скоростная ракета;11.20;ammo.rocket.hv.png;Ammunition;5
+ammo.rocket.smoke;Дымовая ракета;11.20;ammo.rocket.smoke.png;Ammunition;5
+arrow.wooden;Деревянная стрела;11.20;arrow.wooden.png;Ammunition;100
+arrow.fire;Огненная стрела;11.20;arrow.fire.png;Ammunition;10
+arrow.hv;Скоростная стрела;11.20;arrow.hv.png;Ammunition;100
+diving.fins;Ласты для дайвинга;11.20;diving.fins.png;Attire;1;
+diving.mask;Маска для дайвинга;11.20;diving.mask.png;Attire;1;
+diving.tank;Баллон с воздухом;11.20;diving.tank.png;Attire;1;
+diving.wetsuit;Гидрокостюм;11.20;diving.wetsuit.png;Attire;1;
+heavy.plate.helmet;Тяжелый пуленепробиваемый шлем;11.20;heavy.plate.helmet.png;Attire;1;
+heavy.plate.jacket;Тяжелый латный нагрудник;11.20;heavy.plate.jacket.png;Attire;1;
+heavy.plate.pants;Тяжелые пуленепробиваемые поножи;11.20;heavy.plate.pants.png;Attire;1;
+hoodie;Толстовка;11.20;hoodie.png;Attire;1;
+metal.plate.torso;Металлический нагрудник;11.20;metal.plate.torso.png;Attire;1;
+metal.facemask;Металлическая маска;11.20;metal.facemask.png;Attire;1;
+pants;Городские штаны;11.20;pants.png;Attire;1;
+riot.helmet;Шлем;11.20;riot.helmet.png;Attire;1;
+roadsign.gloves;Перчатки из дорожных знаков;11.20;roadsign.gloves.png;Attire;1;
+roadsign.jacket;Броня из дорожных знаков;11.20;roadsign.jacket.png;Attire;1;
+roadsign.kilt;Килт из дорожных знаков;11.20;roadsign.kilt.png;Attire;1;
+tactical.gloves;Тактические перчатки;11.20;tactical.gloves.png;Attire;1;
+ducttape;Скотч;11.20;ducttape.png;Component;1;
+fuse;Электрический предохранитель;11.20;fuse.png;Component;1;
+propanetank;Пропановый баллон;11.20;propanetank.png;Component;1;
+gears;Шестерни;11.20;gears.png;Component;1;
+glue;Клей;11.20;glue.png;Component;1;
+metalblade;Металлическое лезвие;11.20;metalblade.png;Component;1;
+metalpipe;Металлическая труба;11.20;metalpipe.png;Component;1;
+metalspring;Металлическая пружина;11.20;metalspring.png;Component;1;
+riflebody;Корпус винтовки;11.20;riflebody.png;Component;1;
+roadsigns;Дорожные знаки;11.20;roadsigns.png;Component;1;
+rope;Веревка;11.20;rope.png;Component;1;
+semibody;Корпус полуавтомата;11.20;semibody.png;Component;1;
+sewingkit;Набор для шитья;11.20;sewingkit.png;Component;1;
+sheetmetal;Листовой металл;11.20;sheetmetal.png;Component;1;
+smgbody;Корпус пистолет-пулемета;11.20;smgbody.png;Component;1;
+tarp;Брезент;11.20;tarp.png;Component;1;
+techparts;Старые микросхемы;11.20;techparts.png;Component;1;
+floor.grill;Решетчатый пол;11.20;floor.grill.png;Construction;1;
+door.hinged.toptier;Бронированная дверь;11.20;door.hinged.toptier.png;Construction;1;
+door.double.hinged.toptier;Двойная бронированная дверь;11.20;door.double.hinged.toptier.png;Construction;1;
+lock.code;Кодовый замок;11.20;lock.code.png;Construction;1;
+wall.frame.garagedoor;Гаражная дверь;11.20;wall.frame.garagedoor.png;Construction;1;
+gates.external.high.stone;Высокие внешние каменные ворота;11.20;gates.external.high.stone.png;Construction;1;
+wall.external.high.stone;Высокая внешняя каменная стена;11.20;wall.external.high.stone.png;Construction;1;
+floor.ladder.hatch;Лестничный люк;11.20;floor.ladder.hatch.png;Construction;1;
+ladder.wooden.wall;Деревянная лестница;11.20;ladder.wooden.wall.png;Construction;1;
+black.raspberries;Ежевика;11.20;black.raspberries.png;Food;10;1;
+blueberries;Черника;11.20;blueberries.png;Food;10;1;
+bearmeat.cooked;Приготовленное медвежье мясо;11.20;bearmeat.cooked.png;Food;10;1;
+furnace.large;Большая печь;11.20;furnace.large.png;Items;1;
+shelves;Самодельные полки;11.20;shelves.png;Items;1;
+small.oil.refinery;Малый НПЗ;11.20;small.oil.refinery.png;Items;1;
+box.repair.bench;Ремонтный верстак;11.20;box.repair.bench.png;Items;1;
+workbench1;Верстак первого уровня;11.20;workbench1.png;Items;1;
+workbench2;Верстак второго уровня;11.20;workbench2.png;Items;1;
+workbench3;Верстак третьего уровня;11.20;workbench3.png;Items;1;
+syringe.medical;Медицинский шприц;11.20;syringe.medical.png;Medical;5;
+largemedkit;Большая аптечка;11.20;largemedkit.png;Medical;5;
+bandage;Бинт;11.20;bandage.png;Medical;50;
+antiradpills;Противорадиационные таблетки;11.20;antiradpills.png;Medical;5;
+keycard_blue;Blue Keycard;11.20;keycard_blue.png;Misc;1;
+keycard_green;Green Keycard;11.20;keycard_green.png;Misc;1;
+keycard_red;Red Keycard;11.20;keycard_red.png;Misc;1;
+coffin.storage;Гроб;11.20;coffin.storage.png;Misc;1;
+charcoal;Уголь;11.20;charcoal.png;Resources;10000;1;
+cloth;Ткань;11.20;cloth.png;Resources;1000;
+crude.oil;Топливо;11.20;crude.oil.png;Resources;200;
+explosives;Взрывчатое вещество ;11.20;explosives.png;Resources;10;
+gunpowder;Порох;11.20;gunpowder.png;Resources;1500;
+metal.refined;Метал высокого качества;11.20;metal.refined.png;Resources;100;
+leather;Кожа;11.20;leather.png;Resourcesl;1000;
+lowgradefuel;Топливо низкого качества;11.20;lowgradefuel.png;Resources;1000;
+metal.fragments;Фрагменты металла;11.20;metal.fragments.png;Resources;1000;
+scrap;Металлолом;11.20;scrap.png;Resources;100;
+stones;Камень;11.20;stones.png;Resources;10000;
+sulfur;Сера;20;sulfur.png;Resources;1000;
+wood;Дерево;11.20;wood.png;Resources;10000;
+hatchet;Топор;11.20;hatchet.png;Tool;1;
+pickaxe;Кирка;11.20;pickaxe.png;Tool;1;
+jackhammer;Отбойный молоток;11.20;jackhammer.png;Tool;1;
+axe.salvaged;Самодельный топор;11.20;axe.salvaged.png;Tool;1;
+hammer.salvaged;Самодельный молот;11.20;hammer.salvaged.png;Tool;1;
+icepick.salvaged;Самодельный ледоруб;11.20;icepick.salvaged.png;Tool;1;
+explosive.satchel;Сумка с зарядом;11.20;explosive.satchel.png;Tool;1;
+supply.signal;Сигнальная граната;11.20;supply.signal.png;Tool;1;
+surveycharge;Геологический заряд;11.20;surveycharge.png;Tool;1;
+explosive.timed;Взрывчатка с таймером;96;explosive.timed.png;Tool;4;
+autoturret;Автоматическая турель;11.20;autoturret.png;Traps;1;
+flameturret;Огнеметная турель;11.20;flameturret.png;Traps;1;
+trap.landmine;Мина;12;trap.landmine.png;Traps;5;
+guntrap;Ловушка с дробовиком;11.20;guntrap.png;Traps;1;
+samsite;Зенитная турель;11.20;samsite.png;Traps;1;
+trap.bear;Капкан;12;trap.bear.png;Traps;10;
+rifle.ak;Штурмовая винтовка;11.20;rifle.ak.png;Weapon;1;
+grenade.beancan;Граната из банки бобов;11.20;grenade.beancan.png;Weapon;10;
+grenade.f1;Граната F1;11.20;grenade.f1.png;Weapon;20;
+rifle.bolt;Винтовка;11.20;rifle.bolt.png;Weapon;1;
+weapon.mod.8x.scope;Прицел 8х;11.20;weapon.mod.8x.scope.png;Weapon;1;
+shotgun.double;Двуствольный дробовик;11.20;shotgun.double.png;Weapon;1;
+flamethrower;Огнемет;11.20;flamethrower.png;Weapon;1;
+rifle.l96;Винтовка L96;11.20;rifle.l96.png;Weapon;1;
+rifle.lr300;Штурмовая винтовка LR-300;11.20;rifle.lr300.png;Weapon;1;
+lmg.m249;Пулемет М249;11.20;lmg.m249.png;Weapon;1;
+smg.2;Самодельный пистолет-пулемет;11.20;smg.2.png;Weapon;1;
+pistol.m92;М92 Беретта;11.20;pistol.m92.png;Weapon;1;
+pistol.python;Револьвер Питон;11.20;pistol.python.png;Weapon;1;
+pistol.revolver;Револьвер;11.20;pistol.revolver.png;Weapon;1;
+rocket.launcher;Ракетница;11.20;rocket.launcher.png;Weapon;1;
+pistol.semiauto;Полуавтоматический пистолет;11.20;pistol.semiauto.png;Weapon;1;
+weapon.mod.simplesight;Простой самодельный прицел;11.20;weapon.mod.simplesight.png;Weapon;1;
+shotgun.spas12;Дробовик Spas-12;11.20;shotgun.spas12.png;Weapon;1;
+smg.thompson;Пистолет-пулемет Томпсона;11.20;smg.thompson.png;Weapon;1;
+shotgun.waterpipe;Самодельный дробовик;11.20;shotgun.waterpipe.png;Weapon;1;
+weapon.mod.flashlight;Оружейный фонарик;11.20;weapon.mod.flashlight.png;Weapon;1;
+weapon.mod.lasersight;Лазерный прицел;11.20;weapon.mod.lasersight.png;Weapon;1;
+weapon.mod.muzzleboost;Дульный ускоритель;11.20;weapon.mod.muzzleboost.png;Weapon;1;
+weapon.mod.muzzlebrake;Дульный тормоз;11.20;weapon.mod.muzzlebrake.png;Weapon;1;

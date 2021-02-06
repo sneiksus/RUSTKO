@@ -63,7 +63,7 @@ nav a:nth-child(3){
 
 
 video{
-  width: 900px;
+  width: 870px;
   height: 489px;
   margin-top: 74px;
   margin-bottom: 39px;
@@ -637,6 +637,8 @@ color: white;;
 .it-im-a img{
    margin-left: 50%;
    transform: translateX(-50%);
+   max-height: 100px;
+   max-width: 100px;
 }
 .it-im-a:hover{
   opacity: 0.5;
