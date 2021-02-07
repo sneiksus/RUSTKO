@@ -13,9 +13,9 @@
             <div class="row r1 align-items-center justify-content-between ">
                 <div class="col-xl-3">
                     <nav>
-                        <a href="index.html"><i class="fas fa-play"></i> Играть</a>
-                        <a href="shop.html"><i class="fas fa-shopping-bag"></i> Магазин</a>
-                        <a href="vip.html"><i class="fas fa-crown"></i> VIP</a>
+                        <a href="index.php"><i class="fas fa-play"></i> Играть</a>
+                        <a href="shop.php"><i class="fas fa-shopping-bag"></i> Магазин</a>
+                        <a href="vip.php"><i class="fas fa-crown"></i> VIP</a>
                         <!-- <a href=""><i class="fas fa-newspaper"></i> Новости</a> -->
                     </nav>
                 </div>
@@ -192,6 +192,7 @@ else{
             </div>
         </div>
     </section>
+   
     <footer>
         <div class="container-fluid">
             <div class="row ">

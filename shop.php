@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="container-fluid">
             <div class="row r1 align-items-center justify-content-between ">
                 <div class="col-xl-3">
                     <nav>
-                        <a href="index.html"><i class="fas fa-play"></i> Играть</a>
-                        <a href="shop.html"><i class="fas fa-shopping-bag"></i> Магазин</a>
-                        <a href="vip.html"><i class="fas fa-crown"></i> VIP</a>
+                        <a href="index.php"><i class="fas fa-play"></i> Играть</a>
+                        <a href="shop.php"><i class="fas fa-shopping-bag"></i> Магазин</a>
+                        <a href="vip.php"><i class="fas fa-crown"></i> VIP</a>
                         <!-- <a href=""><i class="fas fa-newspaper"></i> Новости</a> -->
                     </nav>
                 </div>
@@ -25,18 +25,68 @@
                     <a href=" #"><img src="./assets/logo.png" id="logo" alt="logo"></a>
                 </div>
                 <div class="col-xl-push-2">
-                    <a id="auth" href=" #">ВОЙТИ ЧЕРЕЗ STEAM <i class="fab fa-steam"></i></a>
-                    <!-- <div id="profile">
-                    <i class="pric">69 <img src="./assets/coal-money.svg"></img></i>
-                    <a id="add" href=""><i class="fas fa-plus-square"></i></a>
-                    <img id="picu" src="./assets/logo.png" class="rounded" alt="Cinque Terre">
-                    <a id="logout" href=""><i class="fas fa-sign-out-alt"></i></a>
-                </div> -->
+                  
+                <?php
+require 'steamauth/steamauth.php';
+
+if(isset($_SESSION['steamid']))
+{
+    require 'steamauth/userInfo.php';
+    $servername = "freedb.tech";
+$username = "freedbtech_rustend";
+$password = "rustend";
+$dbname = "freedbtech_rustend";
+try
+{
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+/* set the PDO error mode to exception */
+//$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//$chck = 'select 1 from `'.$steamprofile['steamid'].'` LIMIT 1';
+
+if ( !$conn->query( "DESCRIBE `".$steamprofile['steamid']."`"))
+{
+    $sql = "CREATE TABLE `".$steamprofile['steamid']."` (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        item VARCHAR(50) NOT NULL,
+        amount INT NOT NULL)";
+    $conn->query($sql);
+    $sql = "INSERT INTO `".$steamprofile['steamid']."` (item, amount) VALUES ('bablo', 0)";
+    $conn->query($sql);
+}
+$sql = "SELECT amount
+FROM `".$steamprofile['steamid']."`
+WHERE item = 'bablo';";
+$result = $conn->query($sql);
+$row = $result->fetch(PDO::FETCH_ASSOC);
+}
+catch(PDOException $e)
+{
+
+    echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+    echo "<div id='profile'>
+                    <i id='balanc' data-balance='{$row["amount"]}' class='pric'>".$row["amount"]."<img src='./assets/coal-money.svg'></img></i>
+                    <a id='add' ><i class='fas fa-plus-square'></i></a>
+                    <img id='picu' src='".$steamprofile['avatar']."' class='rounded' alt='Cinque Terre'>
+                    <a id='logout' href='steamauth/logout.php'><i class='fas fa-sign-out-alt'></i></a>
+                 </div>";
+}
+else{
+    echo "<a id='auth'  href='?login'>ВОЙТИ ЧЕРЕЗ STEAM <i class='fab fa-steam'></i></a>";
+}
+
+?>
+                    
                 </div>
             </div>
         </div>
     </header>
     <section class="main">
+    <div class="alert alert-danger collapse" role="alert">
+  Вы не авторизованы!
+</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-2">
@@ -67,17 +117,23 @@
               
                       <?php
          if(file_exists ( "./assets/shopItems.txt" )){
-            $f = fopen("./assets/shopItems.txt", 'r') or die("no file");
+             
+             $f = fopen("./assets/shopItems.txt", 'r') or die("no file");
             while(($line = fgets($f)) !== false)
             {
              $pieces = explode(";", $line);
+             $at;
+             if(isset($_SESSION['steamid']))
+             $at= " <a class='it-im-a' id='it-c' onclick=\"buy('{$pieces[1]}',{$pieces[2]},'{$pieces[4]}','{$pieces[3]}','{$pieces[0]}')\"><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>";
+           else
+           $at=" <a class='it-im-a' id='it-c' onclick='alert()'><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>";
              echo "<div class='item'>
              <div class='firsr'>
                  <i class='pric float-left'>".$pieces[2]." <img src='./assets/coal-money.svg'></img></i>
                  <i class='pric float-right'>x".$pieces[5]."</i>
              </div>
              <div class='midlr'>
-               <a class='it-im-a' id='it-c' onclick=\"buy('{$pieces[1]}',{$pieces[2]},'{$pieces[4]}','{$pieces[3]}')\"><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>  
+            { $at}
              </div>
              <div class='endr'>
                  <p  class='pric'>".$pieces[1]."</p>
@@ -94,60 +150,10 @@
                      
                       </div>
                       <div class="tab-pane fade" id="v-pills-resources" role="tabpanel" aria-labelledby="v-pills-resources-tab">
-                      <?php
-         if(file_exists ( "./assets/shopItems.txt" )){
-            $f = fopen("./assets/shopItems.txt", 'r') or die("no file");
-            while(($line = fgets($f)) !== false)
-            {
-             
-             $pieces = explode(";", $line);
-             if($pieces[4]=='Resources')
-             echo "<div class='item'>
-             <div class='firsr'>
-                 <i class='pric float-left'>".$pieces[2]." <img src='./assets/coal-money.svg'></img></i>
-                 <i class='pric float-right'>x".$pieces[5]."</i>
-             </div>
-             <div class='midlr'>
-               <a class='it-im-a' id='it-c' href='javascript:void(0)'><img alt='item' src="."./assets/items/".$pieces[3]." ></a>  
-             </div>
-             <div class='endr'>
-                 <p  class='pric'>".$pieces[1]."</p>
-                 <i>".$pieces[0]."</i>
-             </div>
-         </div>";
-            }
-            fclose($f);
-         }
-         
-         ?> 
+                     
                       </div>
                       <div class="tab-pane fade" id="v-pills-weapon" role="tabpanel" aria-labelledby="v-pills-settings-weapon">
-                      <?php
-         if(file_exists ( "./assets/shopItems.txt" )){
-            $f = fopen("./assets/shopItems.txt", 'r') or die("no file");
-            while(($line = fgets($f)) !== false)
-            {
-             
-             $pieces = explode(";", $line);
-             if($pieces[4]=='Weapon')
-             echo "<div class='item'>
-             <div class='firsr'>
-                 <i class='pric float-left'>".$pieces[2]." <img src='./assets/coal-money.svg'></img></i>
-                 <i class='pric float-right'>x".$pieces[5]."</i>
-             </div>
-             <div class='midlr'>
-               <a class='it-im-a' id='it-c' href='javascript:void(0)'><img alt='item' src="."./assets/items/".$pieces[3]." ></a>  
-             </div>
-             <div class='endr'>
-                 <p  class='pric'>".$pieces[1]."</p>
-                 <i>".$pieces[0]."</i>
-             </div>
-         </div>";
-            }
-            fclose($f);
-         }
-         
-         ?> 
+                    
                       </div>
                     </div>
                 </div>
@@ -181,10 +187,14 @@
                   <i id="ct">Боеприпасы</i>
                   <img id="image" src="./assets/ammo.rifle.png" alt="logo"></img>
                <i id="am">Количество</i>
-               <input id="number" type="number" max="50" min="1" step="1" value="1">
+               <input id="number" onchange="chng(this)" type="number" max="50" min="1" step="1" value="1">
                <i>Стоимость</i>
                <i id="mn" class="pric  float-left">69 <img src="./assets/coal-money.svg"></img></i>
-               <a id="prp"  href="javascript:void(0)">Купить</a>
+               <div id="nomoney" class="alert alert-danger collapse" role="alert">
+               Недостаточно средств
+              </div>
+               <a id="prp"  data-price data-id onclick="acb()"  href="javascript:void(0)">Купить</a>
+              
               </div>
             </div>
           </div>  
@@ -204,15 +214,72 @@
                 </div>
             </div>
         </div>
-        
+        <?php
+    if(isset($_POST['ID']))
+{
+    
+    $servername = "freedb.tech";
+$username = "freedbtech_rustend";
+$password = "rustend";
+$dbname = "freedbtech_rustend";
+try
+{
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+$sql = "INSERT INTO `".$steamprofile['steamid']."` (item, amount) VALUES ('{$_POST['ID']}', {$_POST['amount']})";
+    $conn->query($sql);
+    $sql = "UPDATE `".$steamprofile['steamid']."` SET amount={$_POST['balanc']} WHERE item='bablo'";
+    $conn->query($sql);
+}
+catch(PDOException $e)
+{
+
+    echo $sql . "<br>" . $e->getMessage();
+}
+
+$conn = null;
+}
+
+?>
     </footer>
     <script>
-    function buy(name, price, categ, image){
+    var nm
+    function buy(name, price, categ, image,id){
         document.getElementById('nm').innerHTML = name;
         document.getElementById('ct').innerHTML = categ;
+        document.getElementById('prp').dataset.id = id;
+        document.getElementById('prp').dataset.price = price;
         document.getElementById('mn').innerHTML = price + '<img src="./assets/coal-money.svg"></img>';
         document.getElementById('image').src ='./assets/items/'+ image;
    $('#buyModal').modal('show'); 
+        }
+
+        function alert(){
+            $('.alert').show();
+            setTimeout(function() {
+                $('.alert').hide();
+               }, 2000);
+           
+        }
+        function acb(){
+           var nm = document.getElementById('prp').dataset.id;
+           var number =  document.getElementById('number').value;
+           var price =document.getElementById('prp').dataset.price;
+           if(document.getElementById('balanc').dataset.balance-(price * number).toFixed(2)<0)
+           {
+            $('#nomoney').show();
+            setTimeout(function() {
+                $('#nomoney').hide();
+               }, 2000);
+               
+           }
+           else{
+            $.post( "shop.php", { ID: nm, amount: number, balanc: document.getElementById('balanc').dataset.balance - (price * number).toFixed(2)} );
+           }
+
+        }
+        function chng(e){
+            document.getElementById('mn').innerHTML =  (document.getElementById('prp').dataset.price * e.value).toFixed(2)+ '<img src="./assets/coal-money.svg"></img>';
         }
     </script>
     <link rel="stylesheet" href="./css_js/style.css">
