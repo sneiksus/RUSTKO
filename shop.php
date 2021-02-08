@@ -124,7 +124,7 @@ else{
              $pieces = explode(";", $line);
              $at;
              if(isset($_SESSION['steamid']))
-             $at= " <a class='it-im-a' id='it-c' onclick=\"buy('{$pieces[1]}',{$pieces[2]},'{$pieces[4]}','{$pieces[3]}','{$pieces[0]}')\"><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>";
+             $at= " <a class='it-im-a' id='it-c' onclick=\"buy('{$pieces[1]}',{$pieces[2]},'{$pieces[4]}','{$pieces[3]}','{$pieces[0]}',{$pieces[5]})\"><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>";
            else
            $at=" <a class='it-im-a' id='it-c' onclick='alert()'><img alt='item' src='./assets/items/{$pieces[3]}'></img></a>";
              echo "<div class='item'>
@@ -193,8 +193,7 @@ else{
                <div id="nomoney" class="alert alert-danger collapse" role="alert">
                Недостаточно средств
               </div>
-               <a id="prp"  data-price data-id onclick="acb()"  href="javascript:void(0)">Купить</a>
-              
+               <a id="prp"  data-price data-id data-count onclick="acb()"  href="javascript:void(0)">Купить</a>
               </div>
             </div>
           </div>  
@@ -244,11 +243,12 @@ $conn = null;
     </footer>
     <script>
     var nm
-    function buy(name, price, categ, image,id){
+    function buy(name, price, categ, image,id, count){
         document.getElementById('nm').innerHTML = name;
         document.getElementById('ct').innerHTML = categ;
         document.getElementById('prp').dataset.id = id;
         document.getElementById('prp').dataset.price = price;
+        document.getElementById('prp').dataset.count = count;
         document.getElementById('mn').innerHTML = price + '<img src="./assets/coal-money.svg"></img>';
         document.getElementById('image').src ='./assets/items/'+ image;
    $('#buyModal').modal('show'); 
@@ -263,9 +263,11 @@ $conn = null;
         }
         function acb(){
            var nm = document.getElementById('prp').dataset.id;
+           var count = document.getElementById('prp').dataset.count;
            var number =  document.getElementById('number').value;
            var price =document.getElementById('prp').dataset.price;
-           if(document.getElementById('balanc').dataset.balance-(price * number).toFixed(2)<0)
+           var nb = document.getElementById('balanc').dataset.balance - (price * number).toFixed(2);
+           if(nb<0)
            {
             $('#nomoney').show();
             setTimeout(function() {
@@ -274,7 +276,12 @@ $conn = null;
                
            }
            else{
-            $.post( "shop.php", { ID: nm, amount: number, balanc: document.getElementById('balanc').dataset.balance - (price * number).toFixed(2)} );
+            $.post( "shop.php", { ID: nm, amount: number*count, balanc: nb}, function(data){
+                document.getElementById('balanc').innerHTML = nb + '<img src="./assets/coal-money.svg"></img>';
+                document.getElementById('balanc').dataset.balance = nb;
+                $('#buyModal').modal('hide'); 
+                $('#exampleModal').modal('show'); 
+            } );
            }
 
         }
