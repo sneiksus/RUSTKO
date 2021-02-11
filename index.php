@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>Главная</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
 </head>
@@ -20,7 +20,7 @@
                     </nav>
                 </div>
                 <div class="col-xl-3">
-                    <a href=" #"><img src="./assets/logo.png" id="logo" alt="logo"></a>
+                <a href="index.php"><img src="./assets/logo.png"  href="index.php" id="logo" alt="logo"></a>
                 </div>
                 <div class="col-xl-push-2">
                   
@@ -67,7 +67,7 @@ $conn = null;
     echo "<div id='profile'>
                     <i class='pric'>".$row["amount"]."<img src='./assets/coal-money.svg'></img></i>
                     <a id='add' ><i class='fas fa-plus-square'></i></a>
-                    <img id='picu' src='".$steamprofile['avatar']."' class='rounded' alt='Cinque Terre'>
+                    <img id='picu' src='".$steamprofile['avatar']."'  alt='Cinque Terre'>
                     <a id='logout' href='steamauth/logout.php'><i class='fas fa-sign-out-alt'></i></a>
                  </div>";
 }
@@ -82,6 +82,9 @@ else{
         </div>
     </header>
     <section class="main">
+    <div class="alert alert-secondary fixed-top collapse" role="alert">
+  IP скопирован
+</div>
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center ">
                 <div class="col-xl-6">
@@ -99,15 +102,15 @@ else{
                                 <p class="max-players"><i class="fas fa-users"></i> MAX 3</p>
                             </div>
                             <div>
-                                <a href=""><i class="far fa-2x fa-copy"></i></a>
+                                <a data-ip='localhost:28015' onclick='copy(this)' href = "javascript:void(0);"><i class="far fa-2x fa-copy"></i></a>
                             </div>
                         </div>
                         <div class=" row justify-content-center">
-                            <a class="pla" href=""><i class="fas fa-2x fa-play"></i></a>
+                            <a class="pla" href="steam://connect/localhost:27015"><i class="fas fa-2x fa-play"></i></a>
                         </div>
                         <div class="fr row justify-content-between">
                             <div>
-                                <p class="players"><i class="fas fa-user-friends"></i><i class="curent_players">87</i>
+                                <p class="players"><i class="fas fa-user-friends"></i><i id="players" class="curent_players">87</i>
                                     /100</p>
                             </div>
                             <div>
@@ -212,6 +215,28 @@ else{
     <script>
     function auth(e){
    $.post( "index.php", {auth: 1});
+    }
+    window.onload = function(){
+        $.get( "https://api.rust-servers.info/status/1", function( data ) {
+           // var obj = JSON.parse(data);
+            document.getElementById('players').innerHTML = data.players;
+            if(data.players>=50)
+            document.getElementById('players').style.color = 'red';
+            else
+            document.getElementById('players').style.color = 'green';
+});
+    }
+    function copy(d){
+        const el = document.createElement('textarea');
+  el.value = 'localhost';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  $('.alert').show();
+            setTimeout(function() {
+                $('.alert').hide();
+               }, 2000);
     }
     </script>
     <link rel="stylesheet" href="./css_js/style.css">

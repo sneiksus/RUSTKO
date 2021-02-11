@@ -1,1 +1,0 @@
-var items = new Array();

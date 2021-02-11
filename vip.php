@@ -21,7 +21,7 @@
                     </nav>
                 </div>
                 <div class="col-xl-3">
-                    <a href=" #"><img src="./assets/logo.png" id="logo" alt="logo"></a>
+                <a href=" index.php"><img src="./assets/logo.png"  href="index.php" id="logo" alt="logo"></a>
                 </div>
                 <div class="col-xl-push-2">
                   
@@ -68,7 +68,7 @@ $conn = null;
     echo "<div id='profile'>
                     <i class='pric'>".$row["amount"]."<img src='./assets/coal-money.svg'></img></i>
                     <a id='add' ><i class='fas fa-plus-square'></i></a>
-                    <img id='picu' src='".$steamprofile['avatar']."' class='rounded' alt='Cinque Terre'>
+                    <img id='picu' src='".$steamprofile['avatar']."' alt='Cinque Terre'>
                     <a id='logout' href='steamauth/logout.php'><i class='fas fa-sign-out-alt'></i></a>
                  </div>";
 }
@@ -82,10 +82,10 @@ else{
             </div>
         </div>
     </header>
-    <div class="alert alert-danger collapse" role="alert">
-  Вы не авторизованы!
-</div>
     <section class="vipki">
+        <div class="alert alert-danger fixed-top  collapse" role="alert">
+      Вы не авторизованы!
+    </div>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-3">
@@ -107,7 +107,7 @@ else{
                        if(isset($_SESSION['steamid']))
                      echo  "<a id='GB' class='kup' href='bronze.php'>Купить</a>";
                      else
-                     echo  "<a id='GB' class='kup'onclick='alert()'>Купить</a>";
+                     echo  "<a id='GB' href='javascript:void(0)' class='kup'onclick='alert()'>Купить</a>";
                       ?>
                     </div>
                 </div>  
@@ -130,10 +130,10 @@ else{
                       <p class="lngth">Стоимость на 7 дней</p>
                       <i class="pric">69 <img src="./assets/coal-money.svg"></img></i>
                       <?php
-                       if(isset($_SESSION['steamid']))
+                     if(isset($_SESSION['steamid']))
                      echo  "<a id='GB' class='kup' href='silver.php'>Купить</a>";
                      else
-                     echo  "<a id='GB' class='kup'onclick='alert()'>Купить</a>";
+                     echo  "<a id='GB' href='javascript:void(0)' class='kup'onclick='alert()'>Купить</a>";
                       ?>
                     </div>
                 </div>  
@@ -163,7 +163,7 @@ else{
                        if(isset($_SESSION['steamid']))
                      echo  "<a id='GB' class='kup' href='gold.php'>Купить</a>";
                      else
-                     echo  "<a id='GB' class='kup'onclick='alert()'>Купить</a>";
+                     echo  "<a id='GB' href='javascript:void(0)' class='kup'onclick='alert()'>Купить</a>";
                       ?>
                     </div>
                 </div>

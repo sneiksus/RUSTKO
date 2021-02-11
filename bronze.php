@@ -21,7 +21,7 @@
                     </nav>
                 </div>
                 <div class="col-xl-3">
-                    <a href=" #"><img src="./assets/logo.png" id="logo" alt="logo"></a>
+                <a href=" index.php"><img src="./assets/logo.png"  href="index.php" id="logo" alt="logo"></a>
                 </div>
                 <div class="col-xl-push-2">
                   
@@ -68,7 +68,7 @@ $conn = null;
     echo "<div id='profile'>
                     <i id='balanc' data-balance='{$row["amount"]}' class='pric'>".$row["amount"]."<img src='./assets/coal-money.svg'></img></i>
                     <a id='add' ><i class='fas fa-plus-square'></i></a>
-                    <img id='picu' src='".$steamprofile['avatar']."' class='rounded' alt='Cinque Terre'>
+                    <img id='picu' src='".$steamprofile['avatar']."' alt='Cinque Terre'>
                     <a id='logout' href='steamauth/logout.php'><i class='fas fa-sign-out-alt'></i></a>
                  </div>";
 }
@@ -82,7 +82,7 @@ else{
             </div>
         </div>
     </header>
-    <div id="nomoney" class="alert alert-danger collapse" role="alert">
+    <div id="nomoney" class="alert alert-danger fixed-top  collapse" role="alert">
                Недостаточно средств
               </div>
     <section class="vipki">
@@ -161,9 +161,9 @@ else{
                <i>Товар</i>
                <a>BRONZE VIP</a>
                <i>Количество</i>
-               <a>x1</a>
+               <a id="d">x1</a>
                <i>Стоимость</i>
-               <a>69 <img id="coal2" src="./assets/coal-money.svg"></img></a>
+               <a id="p">69 <img id="coal2" src="./assets/coal-money.svg"></img></a>
                <p>Чтобы получить товар зайдите на наш сервер и пропишитие команду /donat</p>
               </div>
             </div>
@@ -219,6 +219,8 @@ $conn = null;
             $.post( "bronze.php", { ID: "BRONZE", amount:length, balanc: nb}, function(data){
                 document.getElementById('balanc').innerHTML = nb + '<img src="./assets/coal-money.svg"></img>';
                 document.getElementById('balanc').dataset.balance = nb;
+                document.getElementById('p').innerHTML = price + '<img id="coal2" src="./assets/coal-money.svg">';
+                document.getElementById('d').innerHTML = 'x' + length;
                 $('#exampleModal').modal('show'); 
             } );
            }
